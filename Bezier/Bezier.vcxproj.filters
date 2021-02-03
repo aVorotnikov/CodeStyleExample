@@ -16,15 +16,24 @@
     <Filter Include="Исходные файлы\Math module">
       <UniqueIdentifier>{83707048-d88a-42c9-8184-8059692d563a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Bezier building module">
+      <UniqueIdentifier>{6bdcb14a-4a2c-4ae2-88cc-04f11592a65a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="bezier.cpp">
+      <Filter>Исходные файлы\Bezier building module</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vector.h">
       <Filter>Исходные файлы\Math module</Filter>
+    </ClInclude>
+    <ClInclude Include="bezier.h">
+      <Filter>Исходные файлы\Bezier building module</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

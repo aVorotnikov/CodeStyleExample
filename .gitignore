@@ -3,4 +3,6 @@ Debug
 Release
 x64
 packages
+html
+latex
 *.vcxproj.user

@@ -20,10 +20,10 @@ namespace srm {
    * @brief 2 dimensional vector template class
    * @warning default vector type is double
    */
-  template <typename vecType = double>
+  template <typename scalar_t = double>
     class vector2_t {
     public:
-      vecType
+      scalar_t
         x,  ///< x vector coordinate
         y;  ///< y vector coordinate
 
@@ -45,7 +45,7 @@ namespace srm {
        * @param[in] x0 x coordinate
        * @param[in] y0 y coordinate
        */
-      vector2_t(vecType x0, vecType y0) noexcept : x(x0), y(y0) {
+      vector2_t(scalar_t x0, scalar_t y0) noexcept : x(x0), y(y0) {
       }
 
       /**
@@ -120,7 +120,7 @@ namespace srm {
        * @param[in] a number to mul
        * @return multiplicated vector
        */
-      vector2_t operator*(vecType a) const noexcept {
+      vector2_t operator*(scalar_t a) const noexcept {
         return vector2_t(x * a, y * a);
       }
 
@@ -129,7 +129,7 @@ namespace srm {
        * @param[in] a number to mul
        * @return each self
        */
-      vector2_t & operator*=(vecType a) noexcept {
+      vector2_t & operator*=(scalar_t a) noexcept {
         x *= a;
         y *= a;
         return *this;
@@ -140,7 +140,7 @@ namespace srm {
        * @param[in] a number to div
        * @return divided vector
        */
-      vector2_t operator/(vecType a) const noexcept {
+      vector2_t operator/(scalar_t a) const noexcept {
         return vector2_t(x / a, y / a);
       }
 
@@ -149,7 +149,7 @@ namespace srm {
        * @param[in] a number to div
        * @return each self
        */
-      vector2_t & operator/=(vecType a) noexcept {
+      vector2_t & operator/=(scalar_t a) noexcept {
         x /= a;
         y /= a;
         return *this;
@@ -160,7 +160,7 @@ namespace srm {
        * @param[in] v vector to mul
        * @return dot multipling iof 2 vectors
        */
-      vecType Dot(const vector2_t &v) const noexcept {
+      scalar_t Dot(const vector2_t &v) const noexcept {
         return x * v.x + y * v.y;
       }
 
@@ -169,7 +169,7 @@ namespace srm {
        * @param[in] v vector to mul
        * @return cross multipling iof 2 vectors
        */
-      vecType Cross(const vector2_t &v) const noexcept {
+      scalar_t Cross(const vector2_t &v) const noexcept {
         return x * v.y - y * v.x;
       }
 
@@ -177,7 +177,7 @@ namespace srm {
        * Length of vector function
        * @return vector length
        */
-      vecType Len(void) const noexcept {
+      scalar_t Len(void) const noexcept {
         return sqrt(x * x + y * y);
       }
 
@@ -185,12 +185,12 @@ namespace srm {
        * Squared length of vector function
        * @return square of vector length
        */
-      vecType Len2(void) const noexcept {
+      scalar_t Len2(void) const noexcept {
         return x * x + y * y;
       }
 
       /**@}*/
     };
-};
+}
 
 #endif /* __VECTOR_H_INCLUDED */
