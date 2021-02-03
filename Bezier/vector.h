@@ -37,7 +37,7 @@ namespace srm {
       /**
        * Default constructor
        */
-      vector2_t(void) : x(0), y(0) {
+      vector2_t(void) noexcept : x(0), y(0) {
       }
 
       /**
@@ -45,14 +45,14 @@ namespace srm {
        * @param[in] x0 x coordinate
        * @param[in] y0 y coordinate
        */
-      vector2_t(vecType x0, vecType y0) : x(x0), y(y0) {
+      vector2_t(vecType x0, vecType y0) noexcept : x(x0), y(y0) {
       }
 
       /**
        * Copy constructor
        * @param[in] v vector to copy
        */
-      vector2_t(const vector2_t &v) : x(v.x), y(v.y) {
+      vector2_t(const vector2_t &v) noexcept : x(v.x), y(v.y) {
       }
 
       /**@}*/
@@ -69,7 +69,7 @@ namespace srm {
        * @param[in] v vector to copy
        * @return each self
        */
-      vector2_t & operator=(const vector2_t &v) {
+      vector2_t & operator=(const vector2_t &v) noexcept {
         x = v.x;
         y = v.y;
         return *this;
@@ -80,7 +80,7 @@ namespace srm {
        * @param[in] v vector to add
        * @return sum of vectors
        */
-      vector2_t operator+(const vector2_t &v) {
+      vector2_t operator+(const vector2_t &v) const noexcept {
         return vector2_t(x + v.x, y + v.y);
       }
 
@@ -89,7 +89,7 @@ namespace srm {
        * @param[in] v vector to add
        * @return each self
        */
-      vector2_t & operator+=(const vector2_t &v) {
+      vector2_t & operator+=(const vector2_t &v) noexcept {
         x += v.x;
         y += v.y;
         return *this;
@@ -100,7 +100,7 @@ namespace srm {
        * @param[in] v vector to dif
        * @return difference of vectors
        */
-      vector2_t operator-(const vector2_t &v) {
+      vector2_t operator-(const vector2_t &v) const noexcept {
         return vector2_t(x - v.x, y - v.y);
       }
 
@@ -109,7 +109,7 @@ namespace srm {
        * @param[in] v vector to dif
        * @return each self
        */
-      vector2_t & operator-=(const vector2_t &v) {
+      vector2_t & operator-=(const vector2_t &v) noexcept {
         x -= v.x;
         y -= v.y;
         return *this;
@@ -120,7 +120,7 @@ namespace srm {
        * @param[in] a number to mul
        * @return multiplicated vector
        */
-      vector2_t operator*(vecType a) {
+      vector2_t operator*(vecType a) const noexcept {
         return vector2_t(x * a, y * a);
       }
 
@@ -129,7 +129,7 @@ namespace srm {
        * @param[in] a number to mul
        * @return each self
        */
-      vector2_t & operator*=(vecType a) {
+      vector2_t & operator*=(vecType a) noexcept {
         x *= a;
         y *= a;
         return *this;
@@ -140,7 +140,7 @@ namespace srm {
        * @param[in] a number to div
        * @return divided vector
        */
-      vector2_t operator/(vecType a) {
+      vector2_t operator/(vecType a) const noexcept {
         return vector2_t(x / a, y / a);
       }
 
@@ -149,7 +149,7 @@ namespace srm {
        * @param[in] a number to div
        * @return each self
        */
-      vector2_t & operator/=(vecType a) {
+      vector2_t & operator/=(vecType a) noexcept {
         x /= a;
         y /= a;
         return *this;
@@ -160,7 +160,7 @@ namespace srm {
        * @param[in] v vector to mul
        * @return dot multipling iof 2 vectors
        */
-      vecType Dot(const vector2_t &v) {
+      vecType Dot(const vector2_t &v) const noexcept {
         return x * v.x + y * v.y;
       }
 
@@ -169,7 +169,7 @@ namespace srm {
        * @param[in] v vector to mul
        * @return cross multipling iof 2 vectors
        */
-      vecType Cross(const vector2_t &v) {
+      vecType Cross(const vector2_t &v) const noexcept {
         return x * v.y - y * v.x;
       }
 
@@ -177,7 +177,7 @@ namespace srm {
        * Length of vector function
        * @return vector length
        */
-      vecType Len(void) {
+      vecType Len(void) const noexcept {
         return sqrt(x * x + y * y);
       }
 
@@ -185,7 +185,7 @@ namespace srm {
        * Squared length of vector function
        * @return square of vector length
        */
-      vecType Len2(void) {
+      vecType Len2(void) const noexcept {
         return x * x + y * y;
       }
 
